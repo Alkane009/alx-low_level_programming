@@ -1,23 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: Always 0 (Success/correct)
  */
 int main(void)
 {
-	int d;
+	int i;
+	int j;
 
-	for (d = 0; d < 100; d++)
+	for (i = 48; i < 58; i++)
 	{
-		putchar((d / 10) + '0');
-		putchar((d % 10) + '0');
-		if (d != 99)
+		for (j = 48; j < 58; j++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (i != j && i < j)
+			{
+				putchar(i);
+				putchar(j);
+				if (j == 57 && i == 56)
+				{
+					break
+						;
+				}
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	putchar('\n');
